@@ -8,7 +8,7 @@ for domain_dir in /var/www/vhosts/*/; do
 
         if [[ "$domain_name" != "chroot" && "$domain_name" != "default" && "$domain_name" != "fs" && "$domain_name" != "system" && "$domain_name" != "." && "$domain_name" != ".." ]]; then
             if [[ "$domain_name" =~ ^[a-zA-Z0-9.-]+$ ]]; then
-                echo "Düzeltiliyor: $domain_name"
+                echo "Fixing: $domain_name"
                 plesk repair fs -vhosts "$domain_name" -y
                 
                 if [ $? -eq 0 ]; then
